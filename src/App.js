@@ -7,6 +7,9 @@ import ShowCards from "./components/ShowCards/ShowCards";
 const App = () => {
   const [personState, setPersonState] = useState({
     persons: [],
+  });
+
+  const [searchState, setSearchState] = useState({
     search: "",
   });
 
@@ -16,15 +19,13 @@ const App = () => {
       .then((res) => setPersonState({ persons: res.data.data }));
   }, []);
 
-  // const inputSearchHandler = (event) => {
-  //   setPersonState({ search: event.target.value });
-  //   console.log(personState.search);
-  // };
-
+  const inputSearchHandler = (event) => {
+    setSearchState({ search: event.target.value });
+  };
   return (
     <div className="App">
-      <SearchBar />
-      <ShowCards persons={personState.persons} />
+      <SearchBar changed={inputSearchHandler} />
+      <ShowCards persons={personState.persons} input={searchState.search} />
     </div>
   );
 };

@@ -3,7 +3,10 @@ import React from "react";
 import PersonCard from "./Card/PersonCard";
 
 const ShowCards = (props) => {
-  return props.persons.map((person) => {
+  let filteredPersons = props.persons.filter((person) => {
+    return person.email.toLowerCase().indexOf(props.input.toLowerCase()) !== -1;
+  });
+  return filteredPersons.map((person) => {
     return <PersonCard key={person.id} person={person} />;
   });
 };
