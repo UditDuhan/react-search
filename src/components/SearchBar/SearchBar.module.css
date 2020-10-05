@@ -1,0 +1,30 @@
+.SearchBar {
+  margin: 50px;
+  padding: 20px;
+}
+
+.SearchBar input {
+  outline: none;
+  border-radius: 5%;
+  padding: 10px;
+  width: 40%;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.SearchBar button {
+  background-color: transparent;
+  border: none;
+  color: #5c9210;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 10%;
+}
+
+.SearchBar button:hover {
+  color: white;
+  background-color: #5c9210;
+}

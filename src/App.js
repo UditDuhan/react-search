@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
+import SearchBar from "./components/SearchBar/SearchBar";
+import ShowCards from "./components/ShowCards/ShowCards";
 
-function App() {
+const App = () => {
+  const [personState, setPersonState] = useState({
+    persons: [],
+    search: "",
+  });
+
+  useEffect(() => {
+    axios
+      .get("https://reqres.in/api/users?page=1")
+      .then((res) => setPersonState({ persons: res.data.data }));
+  }, []);
+
+  // const inputSearchHandler = (event) => {
+  //   setPersonState({ search: event.target.value });
+  //   console.log(personState.search);
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar />
+      <ShowCards persons={personState.persons} />
     </div>
   );
-}
+};
 
 export default App;
