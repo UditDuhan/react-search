@@ -9,11 +9,11 @@
   border-radius: 25px;
   padding: 10px;
   width: 80%;
-  /* height: 30px; */
+  height: 30px;
   box-shadow: 0 0 10px #00adb5;
   border: none;
   background-color: #eeeeee;
-  /* border: 1px solid black; */
+  border: 1px solid #36373886;
 }
 .SearchBar input::placeholder {
   padding-left: 40px;
@@ -25,24 +25,4 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.SearchBar button {
-  /* background-color: transparent; */
-  border: 1px solid black;
-  width: 10%;
-  height: 50px;
-  border: none;
-  color: #ffffff;
-  outline: none;
-  cursor: pointer;
-  font: inherit;
-  margin-left: 20px;
-  margin-top: 5px;
-  font-weight: bold;
-  border-radius: 25px;
-  background-color: #393e46;
-}
 
-.SearchBar button:hover {
-  color: white;
-  background-color: #00adb5;
-}
