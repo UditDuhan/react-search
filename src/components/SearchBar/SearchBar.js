@@ -9,7 +9,7 @@ const SearchBar = (props) => {
         type="email"
         placeholder="Search email..."
       />
-      <button>Search</button>
+      <button >Search</button>
     </div>
   );
 };
