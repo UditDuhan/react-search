@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import ShowCards from "./components/ShowCards/ShowCards";
+import classes from "./App.module.css";
 
 const App = () => {
   const [personState, setPersonState] = useState({
@@ -23,7 +23,8 @@ const App = () => {
     setSearchState({ search: event.target.value });
   };
   return (
-    <div className="App">
+    <div className={classes.App}>
+      <header>Person Card</header>
       <SearchBar changed={inputSearchHandler} />
       <ShowCards persons={personState.persons} input={searchState.search} />
     </div>

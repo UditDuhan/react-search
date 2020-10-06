@@ -12,7 +12,10 @@ const Card = (props) => {
         </strong>
       </p>
       <p>
-        Email: <em>{props.person.email}</em>
+        Email:{" "}
+        <strong>
+          <em>{props.person.email}</em>
+        </strong>
       </p>
     </div>
   );
